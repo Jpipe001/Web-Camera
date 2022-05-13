@@ -69,16 +69,16 @@ const int PIR_pin = 13;
 
 
 // NETWORK CREDENTIALS
-const char*        ssid = "NETGEAR46";   //"NETWORK NAME";
-const char*    password = "icysea351";   //"PASSWORD";
+const char*        ssid = "NETWORK NAME";
+const char*    password = "PASSWORD";
 
 // CONFIGURE MAIL CLIENT
 // To send Emails using Gmail on port 465 (SSL), you need to create an app password: https://support.google.com/accounts/answer/185833
 #define SMTP_HOST          "smtp.gmail.com"
 #define SMTP_PORT          465
-#define AUTHOR_EMAIL       "jpipe5000@gmail.com"
-#define AUTHOR_PASSWORD    "dbmd uzta sntu soqm"
-#define RECIPIENT_EMAIL    "jpipe001@gmail.com"
+#define AUTHOR_EMAIL       "your email@gmail.com"
+#define AUTHOR_PASSWORD    "xxxx xxxx xxxx xxxx"
+#define RECIPIENT_EMAIL    "recipient email@gmail.com"
 
 SMTPSession smtp;  // The SMTP Session object used for Email sending
 
@@ -170,13 +170,13 @@ void setup()  {
   message.sender.name =                F("ESP Mail");
   message.sender.email =               AUTHOR_EMAIL;
   message.subject =                    F("Test sending camera image");
-  message.addRecipient(F("John Pipe"), F("jpipe001@gmail.com"));
+  message.addRecipient(F("name"), F("recipient@gmail.com"));
   message.html.content = F("<span style=\"color:#ff0000;\">The camera image.</span><br/><br/><img src=\"cid:image-001\" alt=\"esp32 cam image\"  width=\"800\" height=\"600\">");
 
   /* Set the NTP config time */
   session.time.ntp_server = F("pool.ntp.org,time.nist.gov");
-  session.time.gmt_offset = -5;          // -5 Hrs
-  session.time.day_light_offset = 1;     //  1 Hrs
+  session.time.gmt_offset = -5;          // -5 Hrs US Eastern
+  session.time.day_light_offset = 1;     //  1 Hrs US Eastern
 
   /* Enable the chunked data transfer with pipelining for large message if server supported */
   message.enable.chunking = true;
