@@ -9,4 +9,7 @@ This sends an Email with Embedded/Inline Image from ESP32-CAM or TTGO Camera wit
 
 Includes Camera Pins Definitions and Camera Settings.  Sends a captured image frm the camera.
 
-Includes provision for PIR sensor.
+Includes provision for PIR sensor but not implemented.
+
+![image](https://user-images.githubusercontent.com/24758833/168485475-d72a6615-26cc-4063-850d-eb7db349a215.png)
+
